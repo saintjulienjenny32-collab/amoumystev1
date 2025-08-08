@@ -1,0 +1,12 @@
+{
+  "name": "Amou Myste",
+  "short_name": "Amou Myste",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#ffb6c1",
+  "theme_color": "#ff69b4",
+  "icons": [
+    { "src": "logo.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "logo.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
