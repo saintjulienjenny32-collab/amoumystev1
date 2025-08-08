@@ -1,82 +1,42 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Amou Myste</title>
-  <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#ff69b4">
-  <link rel="stylesheet" href="style.css">
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', function() {
-        navigator.serviceWorker.register('/service-worker.js')
-          .then(() => console.log("✅ Service Worker Registered"))
-          .catch(err => console.log("❌ Service Worker Failed", err));
-      });
-    }
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amou Myste</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
-  <header class="hero">
-    <img src="logo.png" alt="Amou Myste" class="logo"/>
-    <h1>Bienvenue sur Amou Myste</h1>
-    <p class="tag">Rencontres douces — Connexions vraies</p>
-    <div class="hero-buttons">
-      <button class="btn primary" id="signupBtn">Je m’inscris</button>
-      <button class="btn" id="loginBtn">Me connecter</button>
-      <button class="btn ghost" id="aboutBtn">En savoir plus</button>
-    </div>
-  </header>
-
-  <main class="container">
-    <section id="features" class="card">
-      <h2>Pourquoi Amou Myste ?</h2>
-      <p>Une plateforme douce et sécurisée pour rencontrer des personnes partageant vos intérêts. Design rose, petites fleurs et coeurs pour une ambiance chaleureuse.</p>
-    </section>
-
-    <section id="signup" class="card hidden">
-      <h2>Inscription</h2>
-      <form id="signupForm">
-        <label>Nom complet<input type="text" name="name" required></label>
-        <label>Email<input type="email" name="email" required></label>
-        <label>Mot de passe<input type="password" name="password" required></label>
-        <div class="payment">
-          <p>Paiement / Support:</p>
-          <button type="button" class="paybtn">MonCash</button>
-          <button type="button" class="paybtn">Payoneer</button>
+    <header>
+        <h1>Bienvenue sur Amou Myste</h1>
+        <div class="buttons">
+            <button onclick="showSignupForm()">Je m’inscris</button>
+            <button onclick="showLoginForm()">Me connecter</button>
         </div>
-        <button class="btn primary" type="submit">Je m’inscris</button>
-      </form>
-    </section>
-
-    <section id="login" class="card hidden">
-      <h2>Connexion</h2>
-      <form id="loginForm">
-        <label>Email<input type="email" name="email" required></label>
-        <label>Mot de passe<input type="password" name="password" required></label>
-        <button class="btn primary" type="submit">Me connecter</button>
-      </form>
-    </section>
-
-    <section id="about" class="card hidden">
-      <h2>À propos</h2>
-      <p>Amou Myste est une plateforme dédiée aux rencontres sérieuses et respectueuses. Contactez-nous via le formulaire contact pour toute question.</p>
-      <div class="contact">
-        <label>Message<textarea id="message" rows="4"></textarea></label>
-        <button class="btn" id="sendMsg">Envoyer</button>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <p>© Amou Myste — Tous droits réservés</p>
-  </footer>
-
-  <div class="flowers" aria-hidden="true">
-    <span class="flower">🌸</span><span class="heart">💖</span><span class="flower">🌸</span>
-  </div>
-
-  <script src="script.js"></script>
+    </header>
+    <main>
+        <section id="signup-form" class="hidden">
+            <h2>Inscription</h2>
+            <form id="formSignup">
+                <input type="text" placeholder="Nom" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Mot de passe" required>
+                <button type="submit">S’inscrire</button>
+            </form>
+        </section>
+        <section id="login-form" class="hidden">
+            <h2>Connexion</h2>
+            <form id="formLogin">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Mot de passe" required>
+                <button type="submit">Se connecter</button>
+            </form>
+        </section>
+        <div class="payments">
+            <button>💰 Payer avec MonCash</button>
+            <button>💳 Payer avec Payoneer</button>
+        </div>
+    </main>
 </body>
 </html>
